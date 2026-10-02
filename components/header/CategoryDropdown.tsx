@@ -1,14 +1,35 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Check } from 'lucide-react';
 import { DROPDOWN_CATEGORIES } from '@/lib/data/mockData';
 import { useUI } from '@/lib/context/UIContext';
 
+const getCategorySlug = (cat: string) => {
+  const lower = cat.toLowerCase().trim();
+  if (lower.includes('all')) return '/collections';
+  if (lower.includes('turn chair')) return '/collections/turn-chairs';
+  if (lower.includes('chair') || lower.includes('armchair') || lower.includes('stool')) return '/collections/chairs';
+  if (lower.includes('press table') || lower.includes('table') || lower.includes('desk') || lower.includes('bowl') || lower.includes('candle')) return '/collections/press-tables';
+  if (lower.includes('spoke sofa') || lower.includes('sofa')) return '/collections/spoke-sofa';
+  if (lower.includes('storage') || lower.includes('wall') || lower.includes('rack')) return '/collections/storage';
+  if (lower.includes('lamp') || lower.includes('light')) return '/collections/lighting';
+  return `/collections/${lower.replace(/\s+/g, '-')}`;
+};
+
 export const CategoryDropdown: React.FC = () => {
   const { isCategoryDropdownOpen, setIsCategoryDropdownOpen, selectedCategory, setSelectedCategory } = useUI();
+  const router = useRouter();
 
   if (!isCategoryDropdownOpen) return null;
+
+  const handleSelectCategory = (category: string) => {
+    setSelectedCategory(category);
+    setIsCategoryDropdownOpen(false);
+    const targetPath = getCategorySlug(category);
+    router.push(targetPath);
+  };
 
   return (
     <>
@@ -22,10 +43,7 @@ export const CategoryDropdown: React.FC = () => {
           return (
             <button
               key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setIsCategoryDropdownOpen(false);
-              }}
+              onClick={() => handleSelectCategory(category)}
               className={`w-full text-left px-5 py-2.5 text-sm font-medium flex items-center justify-between transition-colors ${
                 isSelected
                   ? 'bg-hyper-blue-soft text-hyper-blue-bright font-semibold'

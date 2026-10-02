@@ -15,11 +15,14 @@ export class ProductService {
     if (!categorySlug || categorySlug === 'all-categories' || categorySlug === 'all') {
       return Promise.resolve(PRODUCTS);
     }
+    const cleanSlug = categorySlug.toLowerCase().replace(/-/g, ' ');
     const filtered = PRODUCTS.filter((p) => 
-      p.category.toLowerCase().replace(/\s+/g, '-') === categorySlug.toLowerCase() ||
-      p.slug.includes(categorySlug.toLowerCase())
+      p.category.toLowerCase().includes(cleanSlug) ||
+      p.slug.toLowerCase().includes(cleanSlug) ||
+      p.name.toLowerCase().includes(cleanSlug) ||
+      p.tags.some((t) => t.toLowerCase().includes(cleanSlug))
     );
-    return Promise.resolve(filtered);
+    return Promise.resolve(filtered.length > 0 ? filtered : PRODUCTS);
   }
 
   static async getFeaturedProducts(): Promise<Product[]> {

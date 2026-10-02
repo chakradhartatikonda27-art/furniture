@@ -41,8 +41,8 @@ export default function DynamicCollectionPage() {
         setCollection(colData);
       }
 
-      const allProds = await ProductService.getAllProducts();
-      setProducts(allProds);
+      const catProds = await ProductService.getProductsByCategory(slug);
+      setProducts(catProds);
       setLoading(false);
     }
     loadData();
