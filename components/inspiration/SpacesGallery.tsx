@@ -1,80 +1,54 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Tag } from 'lucide-react';
+import { Tag, ChevronRight } from 'lucide-react';
 import { SPACE_INSPIRATIONS } from '@/lib/data/mockData';
 
 export const SpacesGallery: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="py-16 px-4 md:px-8 max-w-[1440px] mx-auto overflow-hidden">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-hyper-gray-600 block mb-2">
-            Architectural Showcases
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-hyper-black tracking-tight">
-            Get Inspired by Spaces
-          </h2>
-        </div>
-        <p className="text-sm text-hyper-gray-600 max-w-sm">
-          Explore curated interior environments designed with our signature modern furniture and lighting catalog.
-        </p>
+    <section className="py-12 px-4 md:px-8 max-w-[1440px] mx-auto space-y-6">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl md:text-2xl font-black tracking-tight text-hyper-black">
+          Get Inspired by Spaces
+        </h2>
       </div>
 
-      {/* Horizontal Scroll Gallery */}
-      <div className="flex space-x-6 overflow-x-auto no-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0 snap-x">
-        {SPACE_INSPIRATIONS.map((space, index) => {
-          // Dynamic width ratio for editorial rhythm: card 0 large, card 1 medium, card 2+ standard
-          const widthClass =
-            index === 0
-              ? 'w-[320px] sm:w-[480px] md:w-[600px]'
-              : index === 1
-              ? 'w-[280px] sm:w-[400px] md:w-[460px]'
-              : 'w-[260px] sm:w-[340px] md:w-[380px]';
+      {/* Main Showcase Image Frame - Matching Reference Screenshot #1 */}
+      <div className="relative w-full h-[360px] sm:h-[480px] md:h-[580px] rounded-hyper-xl overflow-hidden shadow-hyper-card border border-hyper-gray-200 group">
+        <Image
+          src={SPACE_INSPIRATIONS[activeIndex]?.image || SPACE_INSPIRATIONS[0].image}
+          alt={SPACE_INSPIRATIONS[activeIndex]?.title || 'Space Inspiration'}
+          fill
+          className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+        />
 
-          return (
-            <div
-              key={space.id}
-              className={`flex-shrink-0 snap-start ${widthClass} relative group rounded-hyper-xl overflow-hidden min-h-[420px] md:min-h-[500px] shadow-hyper-card hover:shadow-hyper-hover border border-hyper-gray-200 transition-all duration-500`}
-            >
-              <Image
-                src={space.image}
-                alt={space.title}
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        {/* Tag Icon Badge on Bottom Right of Image (Matching Screenshot #1) */}
+        <div className="absolute bottom-5 right-5 z-20">
+          <Link
+            href={`/collections/${SPACE_INSPIRATIONS[activeIndex]?.roomType || 'living-room'}`}
+            className="inline-flex items-center space-x-1.5 bg-white text-hyper-black text-xs font-black px-4 py-2 rounded-full shadow-lg border border-hyper-gray-200 hover:bg-hyper-gray-100 transition-all hover:scale-105 active:scale-95"
+          >
+            <Tag className="w-4 h-4 text-hyper-black fill-current" />
+            <span>{SPACE_INSPIRATIONS[activeIndex]?.tagCount || 3}</span>
+          </Link>
+        </div>
+      </div>
 
-              {/* Tag / Count Badge */}
-              <div className="absolute top-5 left-5 z-10">
-                <span className="inline-flex items-center space-x-1.5 bg-white/90 backdrop-blur-md text-hyper-black text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
-                  <Tag className="w-3.5 h-3.5 text-hyper-blue-bright" />
-                  <span>🏷 {space.tagCount}</span>
-                </span>
-              </div>
-
-              {/* Card Footer Text */}
-              <div className="absolute bottom-6 left-6 right-6 text-white z-10 space-y-2">
-                <h3 className="text-2xl md:text-3xl font-black">{space.title}</h3>
-                {space.subtitle && (
-                  <p className="text-xs md:text-sm text-slate-200 line-clamp-2 font-medium">
-                    {space.subtitle}
-                  </p>
-                )}
-                <div className="pt-2">
-                  <Link
-                    href={`/collections/${space.roomType}`}
-                    className="inline-flex items-center text-xs font-bold text-white hover:text-hyper-yellow-badge underline underline-offset-4 transition-colors"
-                  >
-                    View Room Furniture →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      {/* Progress Line Indicator (Matching Screenshot #1) */}
+      <div className="flex items-center space-x-2 pt-1">
+        {SPACE_INSPIRATIONS.map((space, idx) => (
+          <button
+            key={space.id}
+            onClick={() => setActiveIndex(idx)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              idx === activeIndex ? 'w-24 bg-hyper-black' : 'w-12 bg-hyper-gray-200 hover:bg-hyper-gray-300'
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
