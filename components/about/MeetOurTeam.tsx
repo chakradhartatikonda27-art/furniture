@@ -24,7 +24,7 @@ export const MeetOurTeam: React.FC = () => {
             {/* Subtle Circular Floating Badge */}
             <div className="absolute -bottom-6 -right-6 md:bottom-6 md:right-6 bg-hyper-black text-white w-28 h-28 md:w-32 md:h-32 rounded-full p-4 flex flex-col items-center justify-center text-center shadow-2xl border-4 border-white animate-fade-in">
               <span className="text-[10px] uppercase tracking-widest text-slate-300 font-bold">Studio</span>
-              <span className="text-base md:text-lg font-black leading-none text-hyper-yellow-badge">NYC</span>
+              <span className="text-base md:text-lg font-black leading-none text-hyper-yellow-badge">HYD</span>
               <span className="text-[9px] text-slate-300 mt-1 font-semibold">Crafted 2026</span>
             </div>
           </div>

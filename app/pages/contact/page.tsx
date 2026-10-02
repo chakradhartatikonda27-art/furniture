@@ -16,7 +16,7 @@ export default function ContactPage() {
           Find a Store & Contact Us
         </h1>
         <p className="text-sm text-hyper-gray-600">
-          Visit our flagship showroom in Soho, New York or send a direct inquiry to our interior design consultants.
+          Visit our flagship showroom in Jubilee Hills, Hyderabad or send a direct inquiry to our interior design consultants.
         </p>
       </div>
 
@@ -29,8 +29,8 @@ export default function ContactPage() {
             <div className="flex items-start space-x-4">
               <MapPin className="w-5 h-5 text-hyper-black flex-shrink-0 mt-1" />
               <div>
-                <div className="text-sm font-extrabold text-hyper-black">New York Studio</div>
-                <div className="text-xs text-hyper-gray-600">452 Broome Street, Soho, New York, NY 10013</div>
+                <div className="text-sm font-extrabold text-hyper-black">Hyderabad Studio</div>
+                <div className="text-xs text-hyper-gray-600">Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033, India</div>
               </div>
             </div>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
               <Phone className="w-5 h-5 text-hyper-black flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm font-extrabold text-hyper-black">Phone Inquiry</div>
-                <div className="text-xs text-hyper-gray-600">+1 (212) 555-0198</div>
+                <div className="text-xs text-hyper-gray-600">+91 40 4567 8900 / +91 98765 43210</div>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
               <Mail className="w-5 h-5 text-hyper-black flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm font-extrabold text-hyper-black">Email</div>
-                <div className="text-xs text-hyper-gray-600">concierge@hyper.com</div>
+                <div className="text-xs text-hyper-gray-600">concierge@wisdomfurniture.com</div>
               </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
               <Clock className="w-5 h-5 text-hyper-black flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm font-extrabold text-hyper-black">Showroom Hours</div>
-                <div className="text-xs text-hyper-gray-600">Mon - Sat: 10am - 7pm EST | Sun: 11am - 6pm EST</div>
+                <div className="text-xs text-hyper-gray-600">Mon - Sat: 10am - 8pm IST | Sun: 11am - 6pm IST</div>
               </div>
             </div>
           </div>
