@@ -65,7 +65,7 @@ export const InstagramSection: React.FC = () => {
             rel="noopener noreferrer"
             className="text-lg md:text-xl font-black text-white hover:text-hyper-yellow-badge underline underline-offset-8 transition-colors"
           >
-            @Garage_store
+            @Hyper_Furniture
           </a>
         </div>
       </div>

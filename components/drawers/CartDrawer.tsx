@@ -171,7 +171,7 @@ export const CartDrawer: React.FC = () => {
 
             <div className="space-y-2 pt-2">
               <button
-                onClick={() => alert(`Proceeding to Shopify Checkout in ${currency.code}...`)}
+                onClick={() => alert(`Proceeding to Secure Checkout in ${currency.code}...`)}
                 className="w-full bg-hyper-black text-white font-extrabold text-sm py-4 rounded-full hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2 shadow-md"
               >
                 <span>Checkout ({currency.code})</span>

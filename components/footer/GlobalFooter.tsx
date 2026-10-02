@@ -138,7 +138,7 @@ export const GlobalFooter: React.FC = () => {
 
         {/* Bottom Legal Notice */}
         <div className="pt-6 border-t border-hyper-gray-100 flex flex-col md:flex-row items-center justify-between text-xs text-hyper-gray-600 gap-3">
-          <div>© 2026 Hyper Garage. Powered by Shopify</div>
+          <div>© 2026 HYPER Furniture. All rights reserved.</div>
           <div className="flex items-center space-x-6">
             <Link href="/pages/faq" className="hover:text-hyper-black transition-colors">Terms of Service</Link>
             <Link href="/pages/faq" className="hover:text-hyper-black transition-colors">Privacy Policy</Link>

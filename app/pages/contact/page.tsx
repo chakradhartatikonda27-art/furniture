@@ -46,7 +46,7 @@ export default function ContactPage() {
               <Mail className="w-5 h-5 text-hyper-black flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm font-extrabold text-hyper-black">Email</div>
-                <div className="text-xs text-hyper-gray-600">concierge@hypergarage.com</div>
+                <div className="text-xs text-hyper-gray-600">concierge@hyper.com</div>
               </div>
             </div>
 
