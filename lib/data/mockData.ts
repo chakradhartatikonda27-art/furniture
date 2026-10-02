@@ -49,7 +49,7 @@ export const CATEGORIES: Category[] = [
     id: 'cat-chairs', 
     name: 'Chairs', 
     slug: 'chairs', 
-    image: 'https://images.unsplash.com/photo-1580481072645-022f9a6d1279?q=80&w=600&auto=format&fit=crop', 
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600&auto=format&fit=crop', 
     count: 45 
   },
   { 
@@ -216,10 +216,10 @@ export const PRODUCTS: Product[] = [
     compareAtPrice: 729,
     currency: 'USD',
     images: [
-      'https://images.unsplash.com/photo-1580481072645-022f9a6d1279?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop',
       createFurnitureSvgDataUri('chair', 'Arc Chair', '#F3F4F6'),
     ],
-    thumbnail: 'https://images.unsplash.com/photo-1580481072645-022f9a6d1279?q=80&w=800&auto=format&fit=crop',
+    thumbnail: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop',
     colors: [
       { name: 'Cream Linen', hex: '#ECE3D4' },
       { name: 'Honey Wood', hex: '#E5A93C' },
