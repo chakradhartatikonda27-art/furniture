@@ -66,7 +66,7 @@ export const HeroCarousel: React.FC = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="relative w-full h-[480px] md:h-[580px] lg:h-[620px] rounded-hyper-xl overflow-hidden group shadow-hyper-card">
+      <div className="relative w-full h-[380px] sm:h-[480px] md:h-[580px] lg:h-[620px] rounded-hyper-xl overflow-hidden group shadow-hyper-card">
         {HERO_SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
           const isFailed = failedSlides[slide.id];
@@ -87,22 +87,27 @@ export const HeroCarousel: React.FC = () => {
                 className="object-cover object-center transform scale-100 group-hover:scale-105 transition-transform duration-1000"
               />
 
-              <div className="absolute inset-0 bg-black/40" />
+              {/* High-contrast gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/30" />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <div className="max-w-2xl text-white space-y-4 animate-slide-up">
-                  <span className="text-sm md:text-base font-semibold tracking-wide text-slate-100 block">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+                <div className="max-w-2xl text-white space-y-2 sm:space-y-4 animate-slide-up">
+                  <span className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-slate-200 uppercase block">
                     {slide.eyebrow}
                   </span>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-[80px] font-black tracking-tight leading-none text-white">
+                  <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[80px] font-black tracking-tight leading-none text-white drop-shadow-md">
                     {slide.heading}
                   </h1>
 
-                  <div className="pt-4">
+                  <p className="text-xs sm:text-sm md:text-base text-slate-200 max-w-md mx-auto line-clamp-2 px-2">
+                    {slide.description}
+                  </p>
+
+                  <div className="pt-2 sm:pt-4">
                     <Link
                       href={slide.ctaLink}
-                      className="inline-flex items-center space-x-2 bg-white text-hyper-black font-extrabold text-sm md:text-base px-8 py-3.5 rounded-full hover:bg-hyper-gray-100 transition-all shadow-lg"
+                      className="inline-flex items-center space-x-2 bg-white text-hyper-black font-extrabold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full hover:bg-hyper-gray-100 active:scale-95 transition-all shadow-lg"
                     >
                       <span>{slide.ctaText}</span>
                     </Link>

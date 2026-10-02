@@ -25,14 +25,18 @@ export const SpecialOffersDrawer: React.FC = () => {
         </button>
       )}
 
-      {/* Floating Action Button (Mobile) */}
+      {/* Floating Action Button (Mobile - Bottom Left to avoid covering cards) */}
       {!isSpecialOffersOpen && (
         <button
           onClick={() => setIsSpecialOffersOpen(true)}
           aria-label="Special Offers"
-          className="fixed bottom-6 right-6 z-40 bg-hyper-red-sale text-white p-3.5 rounded-full shadow-2xl flex md:hidden items-center justify-center animate-bounce"
+          className="fixed bottom-5 left-5 z-40 bg-hyper-red-sale text-white px-3.5 py-2.5 rounded-full shadow-2xl flex md:hidden items-center justify-center space-x-2 border border-red-400 active:scale-95 transition-transform"
         >
-          <Tag className="w-5 h-5 text-hyper-yellow-badge" />
+          <Tag className="w-4 h-4 text-hyper-yellow-badge" />
+          <span className="text-[11px] font-extrabold uppercase tracking-wide">Offers</span>
+          <span className="bg-white text-hyper-red-sale text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+            3
+          </span>
         </button>
       )}
 

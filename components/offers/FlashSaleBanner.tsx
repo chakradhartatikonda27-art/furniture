@@ -29,7 +29,7 @@ export const FlashSaleBanner: React.FC = () => {
       title: 'Material Natural',
       label: 'Grid Chair...',
       link: '/products/bow-chair',
-      image: 'https://images.unsplash.com/photo-1580481072645-022f9a6d1279?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop',
       fallback: createFurnitureSvgDataUri('chair', 'Material Natural', '#D1D5DB'),
     },
     {

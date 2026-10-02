@@ -82,39 +82,48 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <button
           onClick={handleWishlist}
           aria-label="Add to Wishlist"
-          className={`absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm transition-all duration-200 hover:scale-110 ${
+          className={`absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm transition-all duration-200 hover:scale-110 active:scale-95 ${
             isLiked ? 'text-[#DC2626]' : 'text-hyper-gray-600 hover:text-hyper-black'
           }`}
         >
           <Heart className={`w-4 h-4 ${isLiked ? 'fill-[#DC2626]' : ''}`} />
         </button>
 
+        {/* Quick Add Shopping Bag Button (Always visible on bottom right, matching design reference) */}
+        <button
+          onClick={handleQuickAdd}
+          aria-label="Quick Add to Cart"
+          title="Add to Cart"
+          className="absolute bottom-3 right-3 z-20 w-9 h-9 rounded-full bg-white text-hyper-black shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 border border-hyper-gray-200 hover:border-hyper-black"
+        >
+          <ShoppingBag className="w-4 h-4 text-hyper-black" />
+        </button>
+
         {/* Selling Fast Ticker Strip */}
         {product.sellingFast && (
-          <div className="absolute inset-x-0 bottom-0 bg-yellow-50/90 backdrop-blur-sm py-1 px-2 border-t border-yellow-200 z-10 overflow-hidden flex items-center justify-center space-x-2 text-[10px] font-extrabold uppercase tracking-wider text-hyper-black">
+          <div className="absolute inset-x-0 bottom-0 bg-yellow-50/90 backdrop-blur-sm py-1 px-2 border-t border-yellow-200 z-10 overflow-hidden flex items-center justify-center space-x-2 text-[10px] font-extrabold uppercase tracking-wider text-hyper-black pr-12">
             <Zap className="w-3 h-3 text-amber-500 fill-amber-500" />
             <span>Selling Fast</span>
             <Zap className="w-3 h-3 text-amber-500 fill-amber-500" />
             <span>Selling Fast</span>
-            <Zap className="w-3 h-3 text-amber-500 fill-amber-500" />
           </div>
         )}
 
-        {/* Quick Add Overlay on Hover */}
+        {/* Extended Quick Add Bar (Desktop Hover Only) */}
         {!product.sellingFast && (
-          <div className="absolute inset-x-3 bottom-3 z-10 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="absolute inset-x-3 bottom-3 z-10 hidden md:flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pr-10">
             <button
               onClick={handleQuickAdd}
-              className="flex-1 bg-hyper-black text-white text-xs font-bold py-2.5 px-4 rounded-full flex items-center justify-center space-x-2 hover:bg-slate-800 transition-colors shadow-md"
+              className="flex-1 bg-hyper-black text-white text-xs font-bold py-2 px-3 rounded-full flex items-center justify-center space-x-1 hover:bg-slate-800 transition-colors shadow-md"
             >
               <ShoppingBag className="w-3.5 h-3.5" />
               <span>Quick Add</span>
             </button>
             <Link
               href={`/products/${product.slug}`}
-              className="w-9 h-9 bg-white text-hyper-black rounded-full flex items-center justify-center hover:bg-hyper-gray-100 transition-colors shadow-md"
+              className="w-8 h-8 bg-white text-hyper-black rounded-full flex items-center justify-center hover:bg-hyper-gray-100 transition-colors shadow-md"
             >
-              <Eye className="w-4 h-4" />
+              <Eye className="w-3.5 h-3.5" />
             </Link>
           </div>
         )}
