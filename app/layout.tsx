@@ -12,6 +12,7 @@ import { CartDrawer } from '@/components/drawers/CartDrawer';
 import { SearchModal } from '@/components/drawers/SearchModal';
 import { SpecialOffersDrawer } from '@/components/drawers/SpecialOffersDrawer';
 import { WisdomAIBot } from '@/components/ai/WisdomAIBot';
+import { ToastNotification } from '@/components/ui/ToastNotification';
 import { GlobalFooter } from '@/components/footer/GlobalFooter';
 
 export const metadata: Metadata = {
@@ -52,6 +53,7 @@ export default function RootLayout({
                   <SearchModal />
                   <SpecialOffersDrawer />
                   <WisdomAIBot />
+                  <ToastNotification />
                 </div>
               </WishlistProvider>
             </CartProvider>

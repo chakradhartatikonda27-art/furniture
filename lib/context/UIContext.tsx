@@ -23,6 +23,9 @@ interface UIContextType {
   setIsCategoryDropdownOpen: (open: boolean) => void;
   selectedCategory: string;
   setSelectedCategory: (cat: string) => void;
+
+  toastMessage: string | null;
+  showToast: (message: string) => void;
 }
 
 const UIContext = createContext<UIContextType | undefined>(undefined);
@@ -34,12 +37,20 @@ export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
 
   const openSearch = () => setIsSearchOpen(true);
   const closeSearch = () => setIsSearchOpen(false);
+
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3500);
+  };
 
   return (
     <UIContext.Provider
@@ -60,6 +71,8 @@ export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }
         setIsCategoryDropdownOpen,
         selectedCategory,
         setSelectedCategory,
+        toastMessage,
+        showToast,
       }}
     >
       {children}

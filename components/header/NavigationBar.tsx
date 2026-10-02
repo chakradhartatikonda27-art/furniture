@@ -47,10 +47,9 @@ export const NavigationBar: React.FC = () => {
             <ChevronDown className="w-4 h-4 text-hyper-gray-600" />
           </Link>
 
-          {/* Theme Features */}
-          <Link href="/collections/modern-essentials" className="flex items-center space-x-1.5 py-1 text-hyper-black hover:text-slate-600 transition-colors font-semibold">
-            <span>Theme Features</span>
-            <ChevronDown className="w-4 h-4 text-hyper-gray-600" />
+          {/* Track Order */}
+          <Link href="/pages/track-order" className="flex items-center space-x-1.5 py-1 text-hyper-black hover:text-slate-600 transition-colors font-semibold">
+            <span>Track Order</span>
           </Link>
         </div>
 

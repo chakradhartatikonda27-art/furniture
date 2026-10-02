@@ -22,7 +22,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
-  const { openCart } = useUI();
+  const { openCart, showToast } = useUI();
   const { formatPrice } = useCurrency();
 
   const isLiked = isInWishlist(product.id);
@@ -42,6 +42,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, selectedColor, 1);
+    showToast(`Added ${product.name} to your bag! 🛍️`);
     openCart();
   };
 
@@ -49,6 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     e.preventDefault();
     e.stopPropagation();
     toggleWishlist(product);
+    showToast(isLiked ? `Removed ${product.name} from wishlist` : `Added ${product.name} to wishlist ❤️`);
   };
 
   return (
