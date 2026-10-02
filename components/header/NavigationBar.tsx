@@ -54,13 +54,21 @@ export const NavigationBar: React.FC = () => {
           </Link>
         </div>
 
-        {/* On Sale in Red */}
-        <Link
-          href="/collections/sale-items"
-          className="text-hyper-red-sale font-bold tracking-wide uppercase text-xs bg-red-50 hover:bg-red-100 px-3.5 py-1.5 rounded-full transition-colors"
-        >
-          On Sale
-        </Link>
+        {/* Right Action Links */}
+        <div className="flex items-center space-x-3">
+          <Link
+            href="/admin"
+            className="text-slate-950 font-black tracking-wide text-xs bg-amber-400 hover:bg-amber-300 px-3.5 py-1.5 rounded-full transition-colors flex items-center space-x-1 shadow-sm"
+          >
+            <span>⚡ Admin Panel</span>
+          </Link>
+          <Link
+            href="/collections/sale-items"
+            className="text-hyper-red-sale font-bold tracking-wide uppercase text-xs bg-red-50 hover:bg-red-100 px-3.5 py-1.5 rounded-full transition-colors"
+          >
+            On Sale
+          </Link>
+        </div>
       </div>
     </nav>
   );

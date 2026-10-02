@@ -49,9 +49,9 @@ export const MeetOurTeam: React.FC = () => {
               <div className="space-y-1">
                 <div className="text-xl font-black text-hyper-black flex items-center space-x-1">
                   <span>📍</span>
-                  <span>New York</span>
+                  <span>Hyderabad</span>
                 </div>
-                <div className="text-xs text-hyper-gray-600 font-medium">Product locally in NY</div>
+                <div className="text-xs text-hyper-gray-600 font-medium">Studio in Jubilee Hills</div>
               </div>
 
               <div className="space-y-1">

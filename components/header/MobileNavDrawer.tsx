@@ -24,7 +24,7 @@ export const MobileNavDrawer: React.FC = () => {
         <div>
           {/* Header */}
           <div className="p-5 border-b border-hyper-gray-200 flex items-center justify-between">
-            <span className="text-2xl font-black tracking-tighter text-hyper-black">HYPER</span>
+            <span className="text-2xl font-black tracking-tighter text-hyper-black">WISDOM</span>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="p-2 text-hyper-gray-600 hover:text-hyper-black rounded-full transition-colors"
@@ -49,6 +49,15 @@ export const MobileNavDrawer: React.FC = () => {
 
           {/* Nav Items */}
           <div className="py-2">
+            <Link
+              href="/admin"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-6 py-3.5 text-slate-950 bg-amber-400 font-extrabold text-base flex items-center justify-between border-b border-slate-100"
+            >
+              <span>⚡ Admin Panel</span>
+              <ChevronRight className="w-4 h-4 text-slate-950" />
+            </Link>
+
             <Link
               href="/collections/sale-items"
               onClick={() => setIsMobileMenuOpen(false)}
