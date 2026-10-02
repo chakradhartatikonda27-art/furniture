@@ -157,7 +157,7 @@ export const CartDrawer: React.FC = () => {
           )}
         </div>
 
-        {/* Footer Checkout Summary */}
+        {/* Footer Checkout Summary & Payment Options */}
         {items.length > 0 && (
           <div className="p-6 border-t border-hyper-gray-200 bg-hyper-gray-50 space-y-4">
             <div className="flex items-center justify-between text-base font-extrabold text-hyper-black">
@@ -169,12 +169,45 @@ export const CartDrawer: React.FC = () => {
               <span className="font-bold text-hyper-black">{currency.flag} {currency.code} ({currency.symbol})</span>
             </div>
 
+            {/* Payment Method Badges */}
+            <div className="space-y-1.5 pt-1">
+              <div className="text-[11px] font-extrabold uppercase tracking-wider text-hyper-gray-600">
+                Payment Gateways Accepted:
+              </div>
+              <div className="grid grid-cols-2 gap-1.5 text-[11px] font-bold">
+                <button
+                  onClick={() => alert(`Launching Razorpay Payment Gateway for ${formatPrice(subtotal)}`)}
+                  className="p-2 bg-blue-50 text-blue-900 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors text-center"
+                >
+                  💳 Razorpay
+                </button>
+                <button
+                  onClick={() => alert(`Launching Cashfree Payment Gateway for ${formatPrice(subtotal)}`)}
+                  className="p-2 bg-purple-50 text-purple-900 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors text-center"
+                >
+                  ⚡ Cashfree
+                </button>
+                <button
+                  onClick={() => alert(`Proceeding to Card Checkout (Visa/Mastercard/Amex)`)}
+                  className="p-2 bg-white border border-hyper-gray-200 text-hyper-black rounded-lg hover:bg-hyper-gray-100 transition-colors text-center"
+                >
+                  💳 Credit/Debit Card
+                </button>
+                <button
+                  onClick={() => alert(`Launching UPI / RuPay Payment`)}
+                  className="p-2 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors text-center"
+                >
+                  📲 UPI / RuPay
+                </button>
+              </div>
+            </div>
+
             <div className="space-y-2 pt-2">
               <button
-                onClick={() => alert(`Proceeding to Secure Checkout in ${currency.code}...`)}
+                onClick={() => alert(`Proceeding to Wisdom Furniture Secure Checkout (${currency.code})...`)}
                 className="w-full bg-hyper-black text-white font-extrabold text-sm py-4 rounded-full hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2 shadow-md"
               >
-                <span>Checkout ({currency.code})</span>
+                <span>Proceed to Pay ({currency.code})</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

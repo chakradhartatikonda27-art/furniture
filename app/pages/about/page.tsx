@@ -15,14 +15,14 @@ export default function AboutPage() {
           Architectural Furniture for Modern Sanctuaries
         </h1>
         <p className="text-base text-hyper-gray-600 leading-relaxed font-normal">
-          Founded in New York, HYPER bridges the boundary between sculptural art and daily functional utility. Every piece is crafted from eco-certified materials.
+          Wisdom Furniture bridges the boundary between sculptural art and daily functional utility. Every piece is crafted from eco-certified materials.
         </p>
       </div>
 
       <div className="relative w-full h-[400px] md:h-[550px] rounded-hyper-xl overflow-hidden shadow-hyper-hover">
         <Image
           src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop"
-          alt="HYPER Showroom Studio"
+          alt="Wisdom Furniture Showroom Studio"
           fill
           className="object-cover object-center"
         />

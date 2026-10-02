@@ -23,14 +23,14 @@ export const MainHeader: React.FC = () => {
           >
             <Menu className="w-6 h-6" />
           </button>
-          <Link href="/" className="text-2xl font-black tracking-tighter text-hyper-black">
-            HYPER
+          <Link href="/" className="text-2xl font-black tracking-tighter text-hyper-black flex items-center space-x-1">
+            <span>WISDOM</span>
           </Link>
         </div>
 
         {/* Desktop Logo */}
-        <Link href="/" className="hidden lg:block text-3xl font-black tracking-tighter text-hyper-black hover:opacity-90 transition-opacity">
-          HYPER
+        <Link href="/" className="hidden lg:flex items-center space-x-1.5 text-3xl font-black tracking-tighter text-hyper-black hover:opacity-90 transition-opacity">
+          <span>WISDOM</span>
         </Link>
 
         {/* Search Component (Desktop) */}

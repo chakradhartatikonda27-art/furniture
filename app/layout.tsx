@@ -11,14 +11,15 @@ import { MobileNavDrawer } from '@/components/header/MobileNavDrawer';
 import { CartDrawer } from '@/components/drawers/CartDrawer';
 import { SearchModal } from '@/components/drawers/SearchModal';
 import { SpecialOffersDrawer } from '@/components/drawers/SpecialOffersDrawer';
+import { WisdomAIBot } from '@/components/ai/WisdomAIBot';
 import { GlobalFooter } from '@/components/footer/GlobalFooter';
 
 export const metadata: Metadata = {
-  title: 'HYPER | Modern Furniture & Home Decor Showroom',
-  description: 'Premium modern furniture, home decor, seating, tables, lighting, and lifestyle products with a luxury editorial shopping experience.',
+  title: 'Wisdom Furniture | Premium Modern Furniture & Home Decor Showroom',
+  description: 'Wisdom Furniture - Modern luxury furniture, home decor, seating, tables, lighting, and lifestyle products with a premium shopping experience.',
   openGraph: {
-    title: 'HYPER Furniture Store',
-    description: 'Modern furniture, home decor, seating, tables, lighting, and lifestyle products.',
+    title: 'Wisdom Furniture Store',
+    description: 'Modern luxury furniture, home decor, seating, tables, lighting, and lifestyle products.',
     type: 'website',
   },
 };
@@ -35,7 +36,7 @@ export default function RootLayout({
           <UIProvider>
             <CartProvider>
               <WishlistProvider>
-                <div className="min-h-screen flex flex-col justify-between relative bg-white">
+                <div className="min-h-screen flex flex-col justify-between relative bg-white overflow-x-hidden">
                   <div>
                     <TopBar />
                     <MainHeader />
@@ -46,10 +47,11 @@ export default function RootLayout({
 
                   <GlobalFooter />
 
-                  {/* Interactive Overlays & Drawers */}
+                  {/* Interactive Overlays, Drawers & AI Bot */}
                   <CartDrawer />
                   <SearchModal />
                   <SpecialOffersDrawer />
+                  <WisdomAIBot />
                 </div>
               </WishlistProvider>
             </CartProvider>
